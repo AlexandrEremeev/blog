@@ -55,7 +55,7 @@ def generate_content(topic: str) -> dict:
                 "role": "user",
                 "content": f"Придумай привлекательный заголовок статьи на тему '{topic}', используя эти новости:\n{recent_news}"
             }],
-            max_tokens=60,
+            max_tokens=20,
             temperature=0.6
         )
         title = title_response.choices[0].message.content.strip()
@@ -67,7 +67,7 @@ def generate_content(topic: str) -> dict:
                 "role": "user",
                 "content": f"Напиши мета-описание для статьи с заголовком '{title}', включая ключевые слова и краткое содержание темы."
             }],
-            max_tokens=120,
+            max_tokens=20,
             temperature=0.5
         )
         meta_description = meta_response.choices[0].message.content.strip()
