@@ -50,7 +50,7 @@ def generate_content(topic: str) -> dict:
 
         # Генерация заголовка
         title_response = openai.ChatCompletion.create(
-            model="gpt-4o-mini",
+            model="gpt-4o",
             messages=[{
                 "role": "user",
                 "content": f"Придумай привлекательный заголовок статьи на тему '{topic}', используя эти новости:\n{recent_news}"
@@ -62,7 +62,7 @@ def generate_content(topic: str) -> dict:
 
         # Генерация мета-описания
         meta_response = openai.ChatCompletion.create(
-            model="gpt-4o-mini",
+            model="gpt-4o",
             messages=[{
                 "role": "user",
                 "content": f"Напиши мета-описание для статьи с заголовком '{title}', включая ключевые слова и краткое содержание темы."
@@ -89,7 +89,7 @@ def generate_content(topic: str) -> dict:
 - Язык — живой и понятный
 """
             }],
-            max_tokens=1500,
+            max_tokens=500,
             temperature=0.7,
             presence_penalty=0.6,
             frequency_penalty=0.6
