@@ -8,7 +8,7 @@ import openai
 app = FastAPI()
 
 # Загрузка API ключей из переменных окружения
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = os.getenv("openai.api_key")
 currents_api_key = os.getenv("CURRENTS_API_KEY")
 
 # Проверка наличия всех необходимых API ключей
